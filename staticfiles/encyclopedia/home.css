@@ -1,0 +1,106 @@
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+}
+
+.cm_mb-3 {
+    padding: 3px;
+}
+
+.cm_form-label{    
+    font-size: 17px;
+}
+
+div.display-content{
+    white-space: pre-wrap;
+}
+
+input{
+    width: 280px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    box-sizing: border-box;    
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+textarea{
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    resize: none;
+    color: var(--text-color);    
+    font-weight: 500;
+}
+
+input:focus, textarea:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+ }
+
+button{
+    background-color: gray;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a.btn:hover, button:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+p, a, li{
+    font-size: 16px;
+}
+
+a.btn{    
+    background-color: gray;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a.btn-right{
+    float: right;
+}
+
+a.entries{    
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a.entries:hover{   
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+h1{
+    font-size: 35px; 
+}
+
+h2{
+    font-size: 28px;
+}
+
+h3{
+    font-size: 21px;
+}
