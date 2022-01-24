@@ -56,3 +56,11 @@ def search_entries(qry, mode):
                     searchResultEntries.append(e)
 
     return searchResultEntries
+
+def delete_entry(title_orig):
+    """This is used when an existing file is editing and it creates a new file if title has changed so the old file needs to be deleted"""
+    
+    filename = f"entries/{title_orig}.md"
+    if default_storage.exists(filename):
+        default_storage.delete(filename)
+        print("***deleted : " + filename)

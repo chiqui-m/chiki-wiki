@@ -9,12 +9,12 @@
 
     <br>
     <h3>Edit this Page</h3>
-    <p>Pages can be in markdown format. Use the guide for markdown syntax reference.</p>
+    <p>Write the content using markdown tags for formatting. Use the guide for markdown syntax reference.</p>
     <br><br>
     
-    <form action="{% url 'edit_wiki' title %}" method="POST">
+    <form action="{% url 'edit_wiki' title title_orig%}" method="POST">
     {% csrf_token %} 
-    {{title_orig}}
+    
     
     <div class="cm_mb-3">
         <p><label class="cm_form-label">Title:</label></p>

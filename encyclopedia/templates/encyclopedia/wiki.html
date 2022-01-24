@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block body %}
-    <a href="{% url 'edit_wiki' title %}" class="btn btn-right">Edit</a>
+    <a href="{% url 'edit_wiki' title title %}" class="btn btn-right">Edit</a>
 
     <br>
     {{title}}
-    <br><br>
-    {{content | safe }}
-
-    
+ 
+    <div class="display-content">
+        {{content | safe }}    
+    </div>    
 
 {% endblock %}

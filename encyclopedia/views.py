@@ -7,8 +7,9 @@ import string
 
 #LIST of available wikis *********************************************
 def index(request):
+    entries = util.list_entries()
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries(),
+        "entries": entries,
         "alphabet": string.ascii_uppercase,
     })
 
@@ -78,7 +79,7 @@ def new_wiki(request):
 
     if request.method == "POST":
         title = request.POST['title']
-        content = request.POST['content']
+        content = bytes(request.POST['content'], 'utf-8')
 
         util.save_entry(title, content)
         return redirect("index")
@@ -88,14 +89,17 @@ def new_wiki(request):
 
 
 #Edit a wiki *********************************************
-def edit_wiki(request, title):
+def edit_wiki(request, title, title_orig):
 
     if request.method == "POST":
         title = request.POST['title']
-        content = request.POST['content']
+        content = bytes(request.POST['content'], 'utf-8')
 
-        util.save_entry(title, content)
-        #add to delete the old file if title has changed
+        util.save_entry(title, content)  #other option to avoid doubling newlines when using form is form.cleaned_data["contents"].encode()
+                
+        if title != title_orig:
+            #delete the old file since save above created a NEW file
+            util.delete_entry(title_orig)       
 
         return redirect("index")
 

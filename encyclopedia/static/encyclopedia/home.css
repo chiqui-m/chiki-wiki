@@ -16,6 +16,10 @@
     font-size: 17px;
 }
 
+div.display-content{
+    white-space: pre-wrap;
+}
+
 input{
     width: 280px;
     border: 2px solid #ccc;
