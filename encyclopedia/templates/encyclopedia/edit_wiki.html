@@ -1,0 +1,34 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block body %}
+    <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" class="btn btn-right">Markdown Guide</a>
+
+    <br>
+    <h3>Edit this Page</h3>
+    <p>Pages can be in markdown format. Use the guide for markdown syntax reference.</p>
+    <br><br>
+    
+    <form action="{% url 'edit_wiki' title %}" method="POST">
+    {% csrf_token %} 
+    {{title_orig}}
+    
+    <div class="cm_mb-3">
+        <p><label class="cm_form-label">Title:</label></p>
+        <input type="text" class="cm_form-control" name="title" value="{{title}}" maxlength="30" required>
+      </div>
+    
+      <div class="cm_mb-3">
+        <label class="cm_form-label">Content:</label>
+        <textarea class="cm_form-control" name="content" rows="20" placeholder="Write your content here..." required autofocus>{{content}}</textarea>
+      </div>
+  
+      <button type="submit" class="cm_btn cm_btn-secondary">Submit</button>
+      <a href="{% url 'wiki' title_orig %}" class="btn">Cancel</a>
+
+    </form>
+
+{% endblock %}

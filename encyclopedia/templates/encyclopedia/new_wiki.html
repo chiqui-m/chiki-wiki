@@ -1,0 +1,33 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New
+{% endblock %}
+
+{% block body %}
+
+    <a href="https://www.markdownguide.org/basic-syntax/" class = "btn btn-right" target="_blank">Markdown Guide</a>
+
+    <br>    
+    <h3>Create a New Page</h3>
+    <p>Pages can be in markdown format. Use the guide for markdown syntax reference.</p>
+    <br><br>
+
+    <form action="{% url 'new_wiki' %}" method="POST">
+    {% csrf_token %} 
+
+    <div class="cm_mb-3">
+      <p><label class="cm_form-label">Title:</label></p>
+      <input type="text" class="cm_form-control" name="title" maxlength="30" required autofocus>
+    </div>
+  
+    <div class="cm_mb-3">
+      <label class="cm_form-label">Content:</label>
+      <textarea class="cm_form-control" name="content" rows="20" placeholder="Write your content here..." required></textarea>
+    </div>
+
+    <button type="submit" class="cm_btn cm_btn-secondary">Submit</button>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    <br>
+    <h1>Pages {{filter_url}}</h1>
+
+    <a href="{% url 'index' %}" class="entries">ALL</a> | 
+    <a href="{% url 'filter' 'A' %}" class="entries">A</a> | 
+    <a href="{% url 'filter' 'B' %}" class="entries">B</a> | 
+    <a href="{% url 'filter' 'C' %}" class="entries">C</a> | 
+    <a href="{% url 'filter' 'D' %}" class="entries">D</a> | 
+    <a href="{% url 'filter' 'E' %}" class="entries">E</a> | 
+    <a href="{% url 'filter' 'F' %}" class="entries">F</a> | 
+    <a href="{% url 'filter' 'G' %}" class="entries">G</a> | 
+    <a href="{% url 'filter' 'H' %}" class="entries">H</a> | 
+    <a href="{% url 'filter' 'I' %}" class="entries">I</a> | 
+    <a href="{% url 'filter' 'J' %}" class="entries">J</a> | 
+    <a href="{% url 'filter' 'K' %}" class="entries">K</a> | 
+    <a href="{% url 'filter' 'L' %}" class="entries">L</a> | 
+    <a href="{% url 'filter' 'M' %}" class="entries">M</a> | 
+    <a href="{% url 'filter' 'N' %}" class="entries">N</a> | 
+    <a href="{% url 'filter' 'O' %}" class="entries">O</a> | 
+    <a href="{% url 'filter' 'P' %}" class="entries">P</a> | 
+    <a href="{% url 'filter' 'Q' %}" class="entries">Q</a> | 
+    <a href="{% url 'filter' 'R' %}" class="entries">R</a> | 
+    <a href="{% url 'filter' 'S' %}" class="entries">S</a> | 
+    <a href="{% url 'filter' 'T' %}" class="entries">T</a> | 
+    <a href="{% url 'filter' 'U' %}" class="entries">U</a> | 
+    <a href="{% url 'filter' 'V' %}" class="entries">V</a> | 
+    <a href="{% url 'filter' 'W' %}" class="entries">W</a> | 
+    <a href="{% url 'filter' 'X' %}" class="entries">X</a> | 
+    <a href="{% url 'filter' 'Y' %}" class="entries">Y</a> | 
+    
+    <br><br>
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'wiki' entry %}" class="entries">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
